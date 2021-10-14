@@ -1,0 +1,117 @@
+/* 
+Orden del como se va construyendo el CSS
+1. Posicionamiento
+2. Modelo caja (box model)
+3. Tipografía
+4. Estilos Visuales
+5. Miscelaneos y otros
+*/
+
+/* Se implementan las variables en el root */
+:root{
+    /* Variables de Color */
+    --bitcoin-orange: #f7931a;
+    --soft-orange: #ffe9d5;
+    --secondary-blue: #1a9af7;
+    --soft-blue: #e7f5ff;
+    --warm-black: #201e1c;
+    --black: #282623;
+    --grey: #bababa;
+    --off-white: #faf8f7;
+    --just-white: #fff;
+}
+
+/* Se resetea los valores por defecto del tamaño para 
+que se ocupe todo el espacio de la pantalla y se trabaje con
+el border box */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    /* El font-size es necesario para utilizar tamaños rem 
+    en vez de pixeles, para que el tamaño fuente escale según
+    el tamaño de la pantalla*/
+    font-size: 62.5%;
+    /* Fuente base desde google fonts */
+    font-family: 'DM Sans', sans-serif;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    /* Se crea el background con los colores copiados desde 
+    Figma, linear-gradient recibe como parametros primero
+    los grados a los que va a dividir los dos colores, 
+    segundo el primer color y el porcentaje en que se mezcla
+    y tercero el segundo color y el porcentaje de mezcla */
+    background: linear-gradient(207.8deg, #201e1c 16.69%, #f7931a 100%);
+}
+
+header img{
+    /* Ancho de la imagen */
+    width: 150px;
+    /* Alto de la imagen */
+    height: 24px;
+    /* Margen superior */
+    margin-top: 60px;
+    /* Centrar la imagen en la pantalla, note que se utiliza
+    align-self en vez de align-items por estar trabajando
+    en flex */
+    align-self: center;
+}
+
+/* Se llama la primera clase */
+.header--title-container{
+    /* Ancho del 90% de la pantalla */
+    width: 90%;
+    /* Ancho minimo */
+    min-width: 288px;
+    /* Ancho máximo */
+    max-width: 900px;
+    /* altura */
+    height: 218px;
+    /* Margen para separarlo del logotipo */
+    margin-top: 40px;
+    /* Se centra el texto */
+    text-align: center;
+    /* Se centra los contenedores del texto */
+    align-self: center;
+}
+
+/* Como buenas práctica primero se llama la clase que lo 
+contiene y luego elemento como tal */
+.header--title-container h1{
+    /* Tamaño de fuente, note que se utiliza rem para escalarlo
+    según el tamaño de la pantalla */
+    font-size: 2.4rem;
+    /* peso de la fuente */
+    font-weight: bold;
+    /* Salto entre líneas */
+    line-height: 2.6rem;
+    /* Color de la fuente, note como se llama una de las 
+    variables creadas anteriormente */
+    color: var(--just-white);
+}
+
+/* Estilos del párrafo del header */
+.header--title-container p{
+    /* Separación del H1 */
+    margin-top: 25px;
+    /* Tamaño de fuente */
+    font-size: 1.4rem;
+    /* grosor de la fuente */
+    font-weight: 500;
+    /* Salto entre líneas */
+    line-height: 1.8rem;
+    /* Color de la fuente dada como variable */
+    color: var(--soft-orange);
+}
