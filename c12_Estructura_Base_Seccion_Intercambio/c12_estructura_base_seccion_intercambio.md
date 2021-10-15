@@ -63,7 +63,7 @@ Estilos de la primera sección del main en CSS
 }
 ~~~
 
-![](../imagenes/img21.png)
+![](../imagenes/img22.png)
 
 Estilos del título y parrafo de la primera sección del main
 
@@ -79,4 +79,4 @@ Estilos del título y parrafo de la primera sección del main
 }
 ~~~
 
-![](../imagenes/img22.png)
+![](../imagenes/img23.png)
