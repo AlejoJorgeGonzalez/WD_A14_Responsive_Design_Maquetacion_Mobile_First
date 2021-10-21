@@ -1,0 +1,480 @@
+/* 
+Orden del como se va construyendo el CSS
+1. Posicionamiento
+2. Modelo caja (box model)
+3. Tipografía
+4. Estilos Visuales
+5. Miscelaneos y otros
+*/
+
+/* Se implementan las variables en el root */
+:root{
+    /* Variables de Color */
+    --bitcoin-orange: #f7931a;
+    --soft-orange: #ffe9d5;
+    --secondary-blue: #1a9af7;
+    --soft-blue: #e7f5ff;
+    --warm-black: #201e1c;
+    --black: #282623;
+    --grey: #bababa;
+    --off-white: #faf8f7;
+    --just-white: #fff;
+}
+
+/* Se resetea los valores por defecto del tamaño para 
+que se ocupe todo el espacio de la pantalla y se trabaje con
+el border box */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    /* El font-size es necesario para utilizar tamaños rem 
+    en vez de pixeles, para que el tamaño fuente escale según
+    el tamaño de la pantalla*/
+    font-size: 62.5%;
+    /* Fuente base desde google fonts */
+    font-family: 'DM Sans', sans-serif;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    /* Se crea el background con los colores copiados desde 
+    Figma, linear-gradient recibe como parametros primero
+    los grados a los que va a dividir los dos colores, 
+    segundo el primer color y el porcentaje en que se mezcla
+    y tercero el segundo color y el porcentaje de mezcla */
+    background: linear-gradient(207.8deg, #201e1c 16.69%, #f7931a 100%);
+}
+
+header img{
+    /* Ancho de la imagen */
+    width: 150px;
+    /* Alto de la imagen */
+    height: 24px;
+    /* Margen superior */
+    margin-top: 60px;
+    /* Centrar la imagen en la pantalla, note que se utiliza
+    align-self en vez de align-items por estar trabajando
+    en flex */
+    align-self: center;
+}
+
+/* Se llama la primera clase */
+.header--title-container{
+    /* Ancho del 90% de la pantalla */
+    width: 90%;
+    /* Ancho minimo */
+    min-width: 288px;
+    /* Ancho máximo */
+    max-width: 900px;
+    /* altura */
+    height: 218px;
+    /* Margen para separarlo del logotipo */
+    margin-top: 40px;
+    /* Se centra el texto */
+    text-align: center;
+    /* Se centra los contenedores del texto */
+    align-self: center;
+}
+
+/* Como buenas práctica primero se llama la clase que lo 
+contiene y luego elemento como tal */
+.header--title-container h1{
+    /* Tamaño de fuente, note que se utiliza rem para escalarlo
+    según el tamaño de la pantalla */
+    font-size: 2.4rem;
+    /* peso de la fuente */
+    font-weight: bold;
+    /* Salto entre líneas */
+    line-height: 2.6rem;
+    /* Color de la fuente, note como se llama una de las 
+    variables creadas anteriormente */
+    color: var(--just-white);
+}
+
+/* Estilos del párrafo del header */
+.header--title-container p{
+    /* Separación del H1 */
+    margin-top: 25px;
+    /* Tamaño de fuente */
+    font-size: 1.4rem;
+    /* grosor de la fuente */
+    font-weight: 500;
+    /* Salto entre líneas */
+    line-height: 1.8rem;
+    /* Color de la fuente dada como variable */
+    color: var(--soft-orange);
+}
+
+/* Estilo del botón del header */
+.header--title-container .header--button{
+    position: absolute;
+    /* Cuando se esta en position absolute se puede utilizar
+    top, bottom, left, right para mover en esa dirección el
+    contenedor*/
+    top: 270px;
+    /* Calc calcula el valor de una operación  */
+    left: calc(50% - 118px);
+    display: block;
+    /* Separación desde el párrafo */
+    margin-top: 35px;
+    /* Espacio para despues darle el estilo de apariencia de 
+    botón */
+    padding: 15px;
+    /* Ancho y altura del contenedor */
+    width: 229px;
+    height: 48px;
+    /* color de fondo */
+    background-color: var(--off-white);
+    /* Sombras del botón */
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    /* Borde del botón */
+    border: none;
+    border-radius: 5px;
+    /* Tamaño de la fuente */
+    font-size: 1.4rem;
+    font-weight: bold;
+    /* Se quita el subrayado */
+    text-decoration: none;
+    /* Color de la fuente */
+    color: var(--black);
+}
+
+/* Icono del botón */
+.header--button span{
+    display: inline-block;
+    /* Ancho y altura del icono */
+    width: 13px;
+    height: 8px;
+    /* Separación del texto del botón */
+    margin-left: 10px;
+    background-image: url('../assets/icons/down_arrow.svg');
+}
+
+main {
+    /* Ancho de toda la pantalla */
+    width: 100%;
+    /* Alto de acuerdo al contenido */
+    height: auto;
+    /* Color de fondo */
+    background-color: var(--off-white);
+}
+
+.main-exchange-container {
+    /* Ancho de toda la pantalla */
+    width: 100%;
+    /* Alto se ajusta al contenido */
+    height: auto;
+    /* Separacion con el header para evitar que el botón de
+    este se cruce con el contenido del header y con la parte
+    de abajo de la segunda seccion de main */
+    padding-top: 80px;
+    padding-bottom: 30 px;
+    /* Texto centrado */
+    text-align: center;
+}
+
+.main-exchange-container--title{
+    /* Ancho del 90% de la pantalla, como minimo de 288px y 
+    máximo de 900px*/
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    /* Se centra el contenedor */
+    margin: 0 auto;
+}
+
+.main-exchange-container .backgroundImg{
+    /* Ancho y alto del contenedor de la imagen */
+    width: 200px;
+    height: 200px;
+    /* Se centra el contenedor */
+    margin: 0 auto;
+    /* Se crea el espacio entre la imagen y el texto */
+    margin-bottom: 50px;
+    /* Se inserta la imagen */
+    background-image: url('../assets/imgs/bitcoin.svg');
+    /* Como buenas prácticas se agregan los siguientes 
+    estilos */
+    /* La imagen cubra el contenedor */
+    background-size: cover;
+    /* La imagen se centre al crecer la pantalla */
+    background-position: center;
+    /* Evitar que la imagen se repita para cubrir el 
+    contenedor */
+    background-repeat: no-repeat;
+}
+
+.main-exchange-container h2{
+    /* Separacion con el texto de abajo */
+    margin-bottom: 30px;
+    /* Estilos de la fuente */
+    font-size: 2.4rem;
+    font-weight: bold;
+    /* Espacio entre líneas */
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.main-exchange-container p{
+    /* Separación del parrafo con el final del contenedor */
+    margin-bottom: 30px;
+    /* Estilos de la fuente */
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+/* Estilos del contenedor que contiene todo lo de monedas */
+.main-currency-table {
+    /* La tabla no ocupa todo el ancho de la pantalla */
+    width: 70%;
+    /* Tamaño minimo y máximo de la tabla */
+    min-width: 235px;
+    max-width: 500px;
+    /* Altura del contenedor */
+    height: 360px;
+    /* Se centra el contenedor */
+    margin: 0 auto;
+    /* Se agrega la fuente, recordar que no es la misma que 
+    el resto de la página, este utiliza la familia Inter, es
+    caso de no encontrarlo se utiliza el sans-serif*/
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilos del título de la tabla, por especificidad se escribe
+la clase padre e hijo, ya que se tiene otra tabla similar */
+.main-currency-table .currency-table--title {
+    /* Separación entre el título y la tabla */
+    margin-bottom: 15px;
+    /* Tamaño de la fuente */
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    /* Color de fuente */
+    color: var(--bitcoin-orange);
+}
+
+/* Estilos al contenedor de tabla */
+.currency-table--container{
+    /* Ancho de la tabla dentro del contenedor */
+    width: 90%;
+    /* Anchos minimos y máximos */
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    /* Se centra la tabla */
+    margin: 0 auto;
+}
+
+/* Estilos propios de la tabla */
+.currency-table--container table {
+    /* Ancho y largo de la tabla de acuerdo al contenedor*/
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Estilos de las columnas de la tabla */
+.currency-table--container td {
+    /* Al ser dos columnas, cada columna ocupa el 50% de la 
+    tabla */   
+    width: 50%;
+    /* Estilos de la fuente */
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    /* Color de fondo */
+    background-color: var(--just-white);
+}
+
+/* Redondeo de la tabla en la esquina superior izquierdo */
+.currency-table--container .table__top-left {
+    border-radius: 15px 0 0 0;
+}
+
+/* Redondeo de la tabla en la esquina superior derecho */
+.currency-table--container .table__top-right {
+    border-radius: 0 15px 0 0;
+}
+
+/* Redondeo de la tabla en la esquina inferior izquierdo */
+.currency-table--container .table__bottom-left {
+    border-radius: 0 0 0 15px;
+}
+
+/* Redondeo de la tabla en la esquina inferior derecho */
+.currency-table--container .table__bottom-right {
+    border-radius: 0 0 15px 0;
+}
+
+/* Estilos a la columna derecha de la tabla  */
+.currency-table--container .table__right {
+    /* Estilos de fuente */
+    font-size: 1.4 rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+/* Se agrega la flecha bajando al lado del precio */
+.currency-table--container .down {
+    /* Flecha a lado del precio */
+    display: inline-block;
+    /* Tamaño de la flecha */
+    width: 15px;
+    height: 15px;
+    /* Separación del precio */
+    margin-left: 10px;
+    /* Se agrega la flecha */
+    background-image: url('../assets/icons/trending-down.svg');
+    /* La imagen ocupe todo el contenedor */
+    background-size: cover;
+    /* imagen centrada */
+    background-position: center;
+    /* No se repita la imagen */
+    background-repeat: no-repeat;
+}
+
+/* Se agrega la flecha subiendo al lado del precio */
+.currency-table--container .up {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('../assets/icons/trending-up.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Estilos de la parte de actualización */
+.currency-table--date {
+    /* tamaño del contenedor */
+    width: 190px;
+    height: 30px;
+    /* Se centra el contenedor */
+    margin: 0 auto;
+    /* Separación con la tabla */
+    margin-top: 15px;
+    /* Espacio interno del contenedor */
+    padding: 8px;
+    /* Color de fondo */
+    background-color: var(--soft-orange);
+    /* Redondeo en las esquinas */
+    border-radius: 8px;
+}
+
+/* Estilos de la fuente */
+.currency-table--date p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--warm-black);
+}
+
+/* Estilos del contenedor que contiene todo lo de comisiones */
+.main-commissions-table {
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilos del título de la tabla, por especificidad se escribe
+la clase padre e hijo, ya que se tiene otra tabla similar */
+.main-commissions-table .commissions-table--title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secondary-blue);
+}
+
+/* Estilos al contenedor de tabla */
+.commissions-table--container{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+/* Estilos propios de la tabla */
+.commissions-table--container table {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos de las columnas de la tabla */
+.commissions-table--container td {
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--just-white);
+}
+
+/* Redondeo de la tabla en la esquina superior izquierdo */
+.commissions-table--container .table__top-left {
+    border-radius: 15px 0 0 0;
+}
+
+/* Redondeo de la tabla en la esquina superior derecho */
+.commissions-table--container .table__top-right {
+    border-radius: 0 15px 0 0;
+}
+
+/* Redondeo de la tabla en la esquina inferior izquierdo */
+.commissions-table--container .table__bottom-left {
+    border-radius: 0 0 0 15px;
+}
+
+/* Redondeo de la tabla en la esquina inferior derecho */
+.commissions-table--container .table__bottom-right {
+    border-radius: 0 0 15px 0;
+}
+
+/* Estilos a la columna derecha de la tabla  */
+.commissions-table--container .table__right {
+    /* Estilos de fuente */
+    font-size: 1.4 rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+/* Estilos de la parte de actualización */
+.commissions-table--date {
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--soft-blue);
+    border-radius: 8px;
+}
+
+/* Estilos de la fuente */
+.commissions-table--date p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--warm-black);
+}
+
