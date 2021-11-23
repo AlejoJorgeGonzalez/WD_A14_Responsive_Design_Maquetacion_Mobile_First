@@ -1,0 +1,22 @@
+/* Estilos de las tablas de conversiones */
+.main-tables-container {
+    display: flex;
+    width: 930px;
+    margin: 0 auto;
+}
+
+/* Estilos de las tarjetas con los beneficios */
+.product-cards--container {
+    /* Se coloca los elementos de manera horizontal */
+    display: flex;
+    /* Se evita el overflow horizontal */
+    flex-wrap: wrap;
+    width: 930px;
+    /* Se centra el contenido */
+    margin: 0 auto;
+}
+
+/* Estilos para centrar las tarjetas de planes */
+.plans-container--slider {
+    justify-content: center;
+}
