@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link de google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <img src="../assets/imgs/logo_with_name_side.svg" alt="">
+        <!-- Se crea la clase header, en la metodología BEM
+        primero se escribe primero el bloque principal 
+        (header) seguido de dos -- y despues el elemento 
+        como tal (title-container) -->
+        <div class="header--title-container">
+            <h1>La próxima revolución en el intercambio de criptomonedas</h1>
+            <p>
+                Batatabit te ayuda a navegar entre los diferentes precios y tendencias
+            </p>
+            <!-- Se crea otra clase porque puede que se 
+            tenga mas botones despues, en la metodología 
+            BEM se coloca el bloque principal (header) y 
+            el elemento como tal (button)-->
+            <!-- En href se escribe el id de la etiqueta a la 
+            cual va ir el navegador al darle clic en el 
+            boton 'conoce nuestro planes del header' -->
+            <a href="#plans" class="header--button">Conoce Nuestros Planes <span></span></a>
+        </div>
+    </header>
+    <main>
+        <!-- Sección con información y valores de las 
+        monedas -->
+        <section class="main-exchange-container">
+            <!-- Imagen moneda -->
+            <div class="backgroundImg"></div>
+            <!-- contenedor de texto -->
+            <div class="main-exchange-container--title">
+                <!-- Titulo h2 -->
+                <h2>Visibilizamos todas las tasas de cambio.</h2>
+                <!-- Párrafo -->
+                <p>Traemos información en tiempo real de las casas de cambio y las monedas más importantes del mundo.</p>
+            </div>
+            <!-- Contenedor de tabla de conversión de monedas, 
+            se utiliza la etiqueta section ya que contiene
+            muchos elementos individuales -->
+            <section class="main-tables-container">
+                <!-- Como el diseño contiene dos tablas, se
+                hace necesario tener dos div -->
+                <!-- Tabla de monedas -->
+                <div class="main-currency-table">
+                    <!-- Título de la tabla -->
+                    <p class="currency-table--title">Monedas</p>
+                    <!-- Contenedor de la Tabla -->
+                    <div class="currency-table--container">
+                        <table>
+                            <!-- tr hace referencia a las 
+                            filas que va a contener la tabla-->
+                            <tr>
+                                <!-- td es la información de la
+                                fila, cada una es una 
+                                columna -->
+                                <td class="table__top-left">Bitcoin</td>
+                                <td class="table__top-right table__right">$1.96 <span class="down"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Ethereum</td>
+                                <td class="table__right">$0.07 <span class="up"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Ripple</td>
+                                <td class="table__right">$2.17 <span class="down"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="table__bottom-left">Stellar</td>
+                                <td class="table__bottom-right table__right">$4.96 <span class="down"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- Actualización de la tabla -->
+                    <div class="currency-table--date">
+                        <!-- La etiqueta b es para poner en bold 
+                        (negrita) el texto -->
+                        <p><b>Actualizado:</b> 19 Julio 23:45</p>
+                    </div>
+                </div>
+                <!-- Tabla de comisiones -->
+                <div class="main-commissions-table">
+                    <!-- Título de la tabla -->
+                    <p class="commissions-table--title">Comisiones</p>
+                    <!-- Contenedor de la tabla -->
+                    <div class="commissions-table--container">
+                        <table>
+                            <tr>
+                                <td class="table__top-left">Bitrade</td>
+                                <td class="table__top-right table__right">$12.96</td>
+                            </tr>
+                            <tr>
+                                <td>Bitpreco</td>
+                                <td class="table__right">$13.07</td>
+                            </tr>
+                            <tr>
+                                <td>Navadax</td>
+                                <td class="table__right">$13.15</td>
+                            </tr>
+                            <tr>
+                                <td class="table__bottom-left">Coinext</td>
+                                <td class="table__bottom-right table__right">$14.96</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- Actualización de la tabla -->
+                    <div class="commissions-table--date">
+                        <!-- La etiqueta b es para poner en bold 
+                        (negrita) el texto -->
+                        <p><b>Actualizado:</b> 19 Julio 23:48</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- Sección mostrando los beneficios de la empresa -->
+        <section class="main-product-detail">
+            <!-- Ícono entre la sección de información de la
+            moneda y la sección de beneficios -->
+            <span class="product-detail--batata-logo"></span>
+            <!-- Contenedor del texto -->
+            <div class="product-detail--title">
+                <!-- Título de la sección -->
+                <h2>Creamos un producto sin comparación.</h2>
+                <!-- Párrafo -->
+                <p>Confíable y diseñado para su uso diario</p>
+            </div>
+            <!-- Contenedor con las tarjetas de beneficios -->
+            <section class="product-cards--container">
+                <!-- Cada tarjeta se convierte en un articulo,
+                en total son 4  -->
+                <article class="product-detail--card">
+                    <!-- Ícono de la tarjeta -->
+                    <span class="clock"></span>
+                    <!-- Encabezado de la tarjeta -->
+                    <p class="product--card-title">Tiempo real</p>
+                    <!-- Texto de la tarjeta -->
+                    <p class="product--card-body">Nuestro API toma información minuto a minuto sobre las tasas que más determinan el comportamiento.</p>
+                </article>
+                <article class="product-detail--card">
+                    <!-- Ícono de la tarjeta -->
+                    <span class="eye"></span>
+                    <!-- Encabezado de la tarjeta -->
+                    <p class="product--card-title">No hay tasas escondidas</p>
+                    <!-- Texto de la tarjeta -->
+                    <p class="product--card-body">Ni en la compra o al momento de exit, Batabit siempre te muestra el costo real de los que estás adquiriendo.</p>
+                </article>
+                <article class="product-detail--card">
+                    <!-- Ícono de la tarjeta -->
+                    <span class="dollar-sign"></span>
+                    <!-- Encabezado de la tarjeta -->
+                    <p class="product--card-title">Compara monedas</p>
+                    <!-- Texto de la tarjeta -->
+                    <p class="product--card-body">No más rumores, con Batabit sabrás el valor real de cada moneda en el mercado actual.</p>
+                </article>
+                <article class="product-detail--card">
+                    <!-- Ícono de la tarjeta -->
+                    <span class="check-circle"></span>
+                    <!-- Encabezado de la tarjeta -->
+                    <p class="product--card-title">Información Confiable</p>
+                    <!-- Texto de la tarjeta -->
+                    <p class="product--card-body">Nuestras fuentes están 100% verificadas y continuamos auditando su contenido mientras se actualizan.</p>
+                </article>
+            </section>
+        </section>
+        <section class="bitcoin-img-container">
+            <h2>Conócelo hoy.</h2>
+        </section>
+        <!-- Sección de planes -->
+        <section id="plans" class="main-plans-container">
+            <!-- Parte del encabezado y el párrafo -->
+            <div class="plans--title">
+                <h2>Escoge el plan que mejor se ajuste a ti.</h2>
+                <p>Cualquier plan te da acceso completo a nuestra plataforma</p>
+            </div>
+            <!-- Contenedor de las tarjetas -->
+            <section class="plans-container--slider">
+                <article class="plans-container--card">
+                    <!-- Encabezado y precio -->
+                    <div class="plan-info-container">
+                        <h3 class="plan-card--title">Pago Mensual</h3>
+                        <!-- Se agrega un span para colocar
+                        el signo pesos mas pequeño-->
+                        <p class="plan-card--price"><span>$</span> 10</p>
+                        <p class="plan-card--saving">*Precio Full sin ninguna oferta.</p>
+                    </div>
+                    <!-- boton -->
+                    <button class="plan-card--ca">Escoger este <span></span></button>
+                </article>
+                <!-- tarjeta -->
+                <article class="plans-container--card">
+                    <!-- Elemento flotante -->
+                    <p class="recommended">Recomendado</p>
+                    <!-- Encabezado y precio -->
+                    <div class="plan-info-container">
+                        <h3 class="plan-card--title">Pago Anual</h3>
+                        <!-- Se agrega un span para colocar
+                        el signo pesos mas pequeño-->
+                        <p class="plan-card--price"><span>$</span> 99</p>
+                        <p class="plan-card--saving">*Ahorras $129 comparado al plan mensual.</p>
+                    </div>
+                    <!-- boton -->
+                    <button class="plan-card--ca">Escoger este <span></span></button>
+                </article>
+                <article class="plans-container--card">
+                    <!-- Encabezado y precio -->
+                    <div class="plan-info-container">
+                        <h3 class="plan-card--title">Pago Semestral</h3>
+                        <!-- Se agrega un span para colocar
+                        el signo pesos mas pequeño-->
+                        <p class="plan-card--price"><span>$</span> 55</p>
+                        <p class="plan-card--saving">*Ahorras $109 comparado al plan mensual.</p>
+                    </div>
+                    <!-- boton -->
+                    <button class="plan-card--ca">Escoger este <span></span></button>
+                </article>
+            </section>
+        </section>
+
+    </main>
+    <footer></footer>
+</body>
+</html>
